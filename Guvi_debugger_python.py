@@ -47,14 +47,14 @@ Sample Output :
 d e '''
 
 s = input()
-L1, L2, L3 = [], [],[]
-for c in s[:] :
-    if c on L1 :
-        L2.append(c)
-    else :
+L1, L2 = [], []
+for c in s[:] : # loop for  string 
+    if c in L1 :  # check string are already on string or not 
+        L2.append(c) # if yes then append c in l2
+    else :  # else part add on l1
         L1.append(c)
-if L2[::] :
+if L2[::] :#simply print out
     print(*L2,end='')
 else :
     print(-1,end='')
-  #now i am working
+  
