@@ -58,3 +58,64 @@ if L2[::] :#simply print out
 else :
     print(-1,end='')
   
+'''You are given some words all in lower case letters your task is to print them in sorted order.
+
+Input Description:-
+You are given a string ‘s’
+
+Output Description:-
+Print the string in sorted order
+
+Sample Input :
+virat kohli
+Sample Output :
+kohli virat'''
+n=list(input().split())
+t=sorted(n)
+print(*t)
+
+'''
+Write a Program to Check if a Date is Valid and Print the Incremented Date Otherwise Invalid
+
+Input Description:-
+A single line input contains a three integer separated by space
+
+Output Description:-
+Print the incremented date.
+
+Sample Input :
+16 1 2020
+Sample Output :
+17 1 2020'''
+date=input()
+dd,mm,yy=map(int,date.split(' '))
+dd=int(dd)
+yy=int(yy)
+if(mm==1 or mm==3 or mm==5 or mm==7 or mm==8 or mm==10 or mm==12):
+    max1=31
+elif(mm==4 or mm==6 or mm==9 or mm==11):
+    max1=30
+elif(yy%4==0 or yy%400==0):
+    max1=29
+else:
+    max1=28
+#increment of date 
+#last month to new year 
+print(max1)
+if( dd==31 and mm==12 ):
+    dd=1
+    mm=1
+    yy=yy+1
+    print(dd,mm,yy)
+
+elif(mm<1 or mm>12):
+    print("Invalid")
+elif(dd<1 or dd>max1):
+    print("Invalid")
+elif dd>1 and dd!=max1 or dd<max1 and max1!=dd:
+    dd=dd+1
+    print(dd,mm,yy)
+elif dd==max1:
+    dd=1
+    mm=mm+1
+    print(dd,mm,yy)
