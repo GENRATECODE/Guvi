@@ -119,3 +119,27 @@ elif dd==max1:
     dd=1
     mm=mm+1
     print(dd,mm,yy)
+'''Ramit is given a list of both positive and negative integers. He has to tell the maximum sum out of all subarrays in the given list. He got confused and requested help from you. Now it is your task to find the maximum sum out of all subarrays in the given list.
+
+Input Description:-
+You are given a number 'n'. Next line contains n space separated numbers.
+
+Output Description:-
+Print the max sum of sub array.
+
+Sample Input :
+5
+1 2 3 -2 5
+Sample Output :
+9'''
+
+size = int(input())
+a = list(map(int,input().split()))
+maxsubar = a[0]
+curr_max = a[0]
+for i in range(1,size-1):
+    curr_max = max(a[i], curr_max + a[i+1])
+    maxsubar = max(maxsubar,curr_max)
+    curr_max=maxsubar
+
+print(maxsubar)
