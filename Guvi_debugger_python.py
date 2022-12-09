@@ -143,3 +143,69 @@ for i in range(1,size-1):
     curr_max=maxsubar
 
 print(maxsubar)
+
+'''Generate a hollow half pyramid pattern using numbers.
+
+Input Description:-
+Given an integer R indicates number of rows.Where 1
+
+Output Description:-
+Print the hollow half pyramid pattern using numbers based on the given integer R.
+
+Sample Input :
+5
+Sample Output :
+1
+12
+1 3
+1  4
+12345'''
+n = int(input())
+a=[]
+j = 0
+q = ''
+for i in range (1,n+1):
+    q = q + str(i)
+    if i == 1:
+        a.append(1)
+    elif 1<i<n:
+        s = str(1) + (" " * j)+ str(i)
+        a.append(s)
+        j = j+1
+    else:
+        a.append(q)
+for i in a:
+    print(i)
+'''
+    You are given a number ‘n’, Your task is to print the binary sequence of a number ranging from 1 to N.
+
+Input Description:-
+Single line contains an integer number ‘N’.
+
+Output Description:-
+Print the binary sequence of numbers.
+
+Sample Input :
+3
+Sample Output :
+1 10 11'''
+def rev(a):
+    b=""
+    for i in a:
+        b=i+b
+    return b
+def number_TO_binary(n):
+    a=""
+    while n!=0:
+        if n%2==0 :
+            a+=str(0)
+        if n%2==1:
+            a+=str(1)
+        n=n//2
+    return rev(a)
+
+n = int(input())
+ans = []
+for i in range(1, n+1):
+    ans.append(number_TO_binary(i))
+print(*ans)
